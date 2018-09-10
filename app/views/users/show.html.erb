@@ -1,0 +1,8 @@
+<h1>  <%= @user.name %> </h1>
+<%= button_to "Delete User", user_path(@user), method: :delete, data: {confirm: "Do you really want to delete the user?"}  %>
+<h3>Previously Owner Quarters</h3>
+  <ul>
+    <% @user.quarters.each do |quarter| %>
+        <li>ID: <%=link_to quarter.id, quarter %> Year: <%= quarter.year %> Degree Rust: <%= quarter.degree_rust %> </li>
+    <% end %>
+  </ul>

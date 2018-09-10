@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>QuarterToMany</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+<style media="screen">
+ul[target="navbar"]{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: grey;
+}
+
+li[target="navlist"]{
+  float: left;
+}
+
+li[target="navlist"]{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li[target="navlist"] :hover {
+  background-color: #111;
+}
+</style>
+
+
+    <ul target="navbar">
+      <li target="navlist"> <%= link_to "Quarters", quarters_path %> </li>
+      <li target="navlist"> <%= link_to "Add Quarter", new_quarter_path %> </li>
+      <li target="navlist"> <%= link_to "Users", users_path %> </li>
+      <li target="navlist"> <%= link_to "Create User", new_user_path %> </li>
+    </ul>
+  <body>
+    <%= yield %>
+  </body>
+</html>

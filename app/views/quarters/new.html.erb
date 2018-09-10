@@ -1,0 +1,17 @@
+<% if @quarter.errors.any?  %>
+<% @quarter.errors.full_messages.each do |error| %>
+  <%= error %><br>
+  <% end %>
+<% end %>
+<h1>Create New Quarter</h1>
+
+<%= form_for @quarter do |f|%>
+  <%= f.label :year %>
+  <%= f.text_field :year %> <br>
+
+  <%= f.label :degree_rust %>
+  <%= f.text_field :degree_rust %> <br>
+
+
+  <%= f.submit "Create Quarter" %>
+<% end %>

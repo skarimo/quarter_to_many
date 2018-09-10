@@ -1,0 +1,10 @@
+<h1>List of Quarters</h1><br>
+  <ul>
+      <% @quarters.each do |quarter| %>
+      <li>ID: <%=link_to quarter.id, quarter %> Year: <%= quarter.year %> Degree Rust: <%= quarter.degree_rust %>
+      <%= button_to "Delete Quarter", quarter_path(quarter), method: :delete, data: {confirm: "Do you really want to delete the Quarter?"}  %>
+    </li>
+
+      <% end %>
+
+    </ul>

@@ -1,0 +1,10 @@
+<h1>List of Owners and their Quarters Previously or Currently Owned</h1><br>
+
+<% @users.each do |user| %>
+  <h3>Name: <%= link_to user.name, user %> || Age: <%= user.age %> || Location: <%= user.location %> </h3>
+    <ul>
+      <% user.quarters.each do |quarter| %>
+      <li>ID: <%=link_to quarter.id, quarter %> Year: <%= quarter.year %> Degree Rust: <%= quarter.degree_rust %> </li>
+      <% end %>
+    </ul>
+<% end %>

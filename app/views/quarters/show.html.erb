@@ -1,0 +1,12 @@
+<h1>Quarter ID: <%= @quarter.id %> Page </h1>
+<%= button_to "Delete Quarter", quarter_path(@quarter), method: :delete, data: {confirm: "Do you really want to delete the Quarter?"}  %>
+
+<h3>Quarters Previous Owner</h3>
+
+<p>
+  <ol>
+    <% @quarter.users.reverse.each do |user| %>
+    <li> Name: <%= link_to user.name, user %> || Age: <%= user.age %> || Location: <%= user.location %> </li>
+    <% end %>
+  </ol>
+</p>
